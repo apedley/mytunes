@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+  </head>
   <body>
+    <div class="container">
+        <h2>my<em>tunes</em></h2>
+        <div id="player">
+        </div>
+    </div>
     <!-- Scripts may be placed anywhere on a page. But FYI, they block rendering of elements
      below them until after the scripts load-->
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/backbone/backbone.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 
     <script src="data/data.js"></script>
 
@@ -26,14 +39,13 @@
         // set up model objects
         var library = new Songs(songData);
         var songs = new Songs();
-        var songQueue = new SongQueue();
-        var app = new AppModel({library: library, songQueue: songQueue});
+        var app = new AppModel({library: library});
 
         // build a view for the top level of the whole app
         var appView = new AppView({model: app});
 
         // put the view onto the screen
-        $('body').append(appView.render());
+        $('#player').append(appView.render());
       });
     </script>
   </body>
