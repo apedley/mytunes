@@ -10,12 +10,12 @@ var LibraryEntryView = Backbone.View.extend({
   events: {
     'click': function(e) {
       // this.model.play();
-      if(e.toElement.className === 'AddToQueue'){
+      // if(e.toElement.className === 'AddToQueue'){
         this.model.enqueue();
-      }
-      if(e.toElement.className === 'AddToPlaylist'){
-        this.model.addToPlayList();
-      }
+      // }
+      // if(e.toElement.className === 'AddToPlaylist'){
+      //   this.model.addToPlayList();
+      // }
 
     }
   },
