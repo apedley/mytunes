@@ -18,7 +18,7 @@ describe('App', function() {
   });
 
   it('creates a song queue on initialize', function(){
-    
+
     expect(app.get('songQueue')).to.be.an.instanceof(SongQueue);
   });
 
